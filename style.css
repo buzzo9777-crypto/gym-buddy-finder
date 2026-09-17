@@ -1,0 +1,364 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3e5f5;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+}
+
+h1 {
+    color: #222;
+    font-size: 36px;
+}
+
+p {
+    color: #555555;
+    font-size: 18px;
+}
+
+.container {
+    background: white;
+    width: 350px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #444;
+}
+.buddies {
+    margin-top: 40px;
+}
+
+.buddy-card {
+    background: white;
+    width: 300px;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.buddy-card h3 {
+    margin-top: 0;
+}
+
+.buddy-card button {
+    width: 120px;
+}
+body {
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    }
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+buddy-card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.buddy-card:hover {
+    transform: translateY(-5px);
+}
+
+.buddy-card h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.buddy-card p {
+    margin: 6px 0;
+}
+#searchBuddy {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin: 15px 0 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+#searchBuddy:focus {
+    border-color: #555;
+}
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 12px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .buddy-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    margin-bottom: 25px;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+}
+buddy-card {
+    background: white;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.buddy-card:hover {
+    transform: translateY(-5px);
+}
+
+.buddy-card h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.buddy-card p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+buddy-card button {
+    display: inline-block;
+    margin: 8px 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buddy-card button:hover {
+    background: #444;
+}
+.testimonials {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.testimonials > p {
+    margin-bottom: 30px;
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.review-card {
+    width: 280px;
+    padding: 25px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.review-card h3 {
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    line-height: 1.6;
+}
+
+.review-card strong {
+    display: block;
+    margin-top: 15px;
+}
+.buddy-card p:last-child{
+    front-size:14px;
+    front-weight:600;
+   
+    margin-top:10px;
+}
+
+/* Profile Popup */
+
+.profile-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-box {
+    background: white;
+    width: 350px;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.profile-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.profile-box h2 {
+    margin-bottom: 20px;
+}
+
+.profile-box p {
+    text-align: left;
+    margin: 12px 0;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.connect-popup-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.buddy-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+}
+.buddy-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+}
+.buddy-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Buddy Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+    <h2>Gym Buddy Finder</h2>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#buddies">Buddies</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+    <h1>🏋️ Gym Buddy Finder</h1>
+    <p>Find a workout partner and stay motivated!</p>
+
+    <div class="container">
+        <h2>Find Your Gym Buddy</h2>
+
+        <input type="text" placeholder="Enter your name">
+        <input type="text" placeholder="Enter your city">
+
+        <select>
+            <option>Select your workout</option>
+            <option>Gym</option>
+            <option>Running</option>
+            <option>Yoga</option>
+            <option>Weight Training</option>
+        </select>
+        <select>
+    <option>Select your fitness goal</option>
+    <option>Build Strength</option>
+    <option>Improve Fitness</option>
+    <option>Stay Active</option>
+    <option>Improve Flexibil</option>
+    </select>
+
+        <button 
+        onclick="findBuddy()">Find Buddy</button>
+    </div>
+<div class="buddies">
+    <h2>Available Gym Buddies</h2>
+
+    <input type="text"
+    id="searchBuddy"
+    placeholder="Search buddy by city or workout">
+    <div id="buddyResult"></div>
+</div>
+<select id="workoutFilter">
+    <option value="all">All Workouts</option>
+    <option value="gym">Gym</option>
+    <option value="yoga">Yoga</option>
+    <option value="running">Running</option>
+    <option value="cycling">Cycling</option>
+</select>
+<input
+type="text"
+id="searchBuddy"
+placeholder="Search buddy by city or workout">
+    <div class="buddy-card">
+        <img src="images/shivendra.jpg" alt="Shivendra" class="buddy-photo">
+        <h3>Shivendra</h3>
+        <p>📍 Lucknow</p>
+        <p>💪 Weight Training</p>
+        <p> Goal:Strenght Training</p>
+        <p>Available for workout</p>
+        
+        <button
+        onclick="connectBuddy()">connect</button>
+        <button
+        class="profile-btn"onclick="viewProfile('Shivendra','Lucknow',
+            'Weight Training','Strenght Training','Available for workout'
+        )">
+
+    Profile</button>
+    </div>
+
+    <div class="buddy-card">
+        <img src="images/ananya.jpg" alt="ananya" class="buddy-photo">
+        <h3>Ananya</h3>
+        <p>📍 Lucknow</p>
+        <p>🧘 Yoga</p>
+        <p>Goal:Improve Stamina</p>
+        <p>Available for Yoga</p>
+        <button>Connect</button>
+        <button class="profile-btn"
+onclick="viewProfile('Ananya','Lucknow','Yoga','Improve Stamina','Available for Yoga')">
+    Profile
+</button>
+    </div>
+
+    <div class="buddy-card">
+        <img src="images/ayush.jpg" alt="ayush" class="buddy-photo">
+        <h3>Ayush</h3>
+        <p>📍 Delhi</p>
+        <p>🏃 Running</p>
+        <p>Goal:  Fitness</p>
+        <p>Available for runnings </p>
+        <button>Connect</button>
+        <button class="profile-btn"
+onclick="viewProfile('Ayush','Delhi','Running','Improve Fitness','Available for running')">
+    Profile
+</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+<section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+
+    <p>Have a question? Send us a message.</p>
+
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+
+    <button onclick="sendMessage()">Send Message</button>
+</section>
+<section class="testimonials" id="reviews">
+    <h2>What Our Users Say</h2>
+    <p>See what our gym community has to say.</p>
+
+    <div class="review-container">
+
+        <div class="review-card">
+            <h3>⭐️⭐️⭐️⭐️⭐️</h3>
+            <p>"I found a great workout partner through Gym Buddy Finder."</p>
+            <strong>— Shivendra</strong>
+        </div>
+
+        <div class="review-card">
+            <h3>⭐️⭐️⭐️⭐️⭐️</h3>
+            <p>"The website makes finding people with similar fitness goals easy."</p>
+            <strong>— Ananya</strong>
+        </div>
+
+        <div class="review-card">
+            <h3>⭐️⭐️⭐️⭐️⭐️</h3>
+            <p>"Simple, useful and easy to use."</p>
+            <strong>— Ayush</strong>
+        </div>
+
+    </div>
+</section>
+<script>
+const searchBuddy = document.getElementById("searchBuddy");
+const buddyList = document.getElementById("buddyList");
+
+const buddies = [
+    { name: "Aarav", city: "Lucknow", workout: "Gym" },
+    { name: "Riya", city: "Delhi", workout: "Yoga" },
+    { name: "Kabir", city: "Mumbai", workout: "Running" },
+    { name: "Ananya", city: "Pune", workout: "Gym" }
+];
+
+function showBuddies(list) {
+    buddyList.innerHTML = "";
+
+    list.forEach(buddy => {
+        buddyList.innerHTML += `
+            <div class="buddy-card">
+                <h3>${buddy.name}</h3>
+                <p>📍 ${buddy.city}</p>
+                <p>💪 ${buddy.workout}</p>
+            </div>
+        `;
+    });
+}
+
+searchBuddy.addEventListener("input", function () {
+    const search = this.value.toLowerCase();
+
+    const filtered = buddies.filter(buddy =>
+        buddy.city.toLowerCase().includes(search) ||
+        buddy.workout.toLowerCase().includes(search) ||
+        buddy.name.toLowerCase().includes(search)
+    );
+
+    showBuddies(filtered);
+});
+
+showBuddies(buddies);
+function viewProfile(name, city, workout, goal, availability) {
+    alert(
+        "👤 Profile\n\n" +
+        "Name: " + name + "\n" +
+        "📍 City: " + city + "\n" +
+        "🏋️ Workout: " + workout + "\n" +
+        "🎯 Goal: " + goal + "\n" +
+        "⏰ " + availability
+    );
+}
+function viewProfile(name, city, workout, goal, availability) {
+
+    document.getElementById("profileName").innerText = name;
+
+    document.getElementById("profileCity").innerText =
+        "📍 City: " + city;
+
+    document.getElementById("profileWorkout").innerText =
+        "🏋️ Workout: " + workout;
+
+    document.getElementById("profileGoal").innerText =
+        "🎯 Goal: " + goal;
+
+    document.getElementById("profileAvailability").innerText =
+        "⏰ " + availability;
+
+    document.getElementById("profileModal").style.display = "flex";
+}
+
+function closeProfile() {
+    document.getElementById("profileModal").style.display = "none";
+}
+
+function connectFromProfile() {
+    alert("✅ Connection request sent successfully!");
+}
+</script>
+</body>
+<section id="about"
+ class="about-section">
+    <h2>About Gym Buddy Finder</h2>
+    <p>
+        Gym Buddy Finder helps you find workout partners
+        based on your city, workout preference, and fitness goal.
+    </p>
+</section>
+<!-- Profile Popup -->
+<div id="profileModal" class="profile-modal">
+    <div class="profile-box">
+        <button class="close-btn" onclick="closeProfile()">×</button>
+
+        <div class="profile-icon">👤</div>
+
+        <h2 id="profileName">Profile</h2>
+
+        <p id="profileCity"></p>
+        <p id="profileWorkout"></p>
+        <p id="profileGoal"></p>
+        <p id="profileAvailability"></p>
+
+        <button class="connect-popup-btn" onclick="connectFromProfile()">
+            🤝 Connect
+        </button>
+    </div>
+</div>
+</body>
+</html>
